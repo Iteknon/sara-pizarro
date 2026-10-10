@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="Sara Pizarro — Fotógrafa de eventos. Contacto, WhatsApp, Instagram y LinkedIn.">
+  <title>Sara Pizarro · Fotógrafa de eventos</title>
+  <style>
+    :root{
+      --bg:#090909;
+      --panel:#111111;
+      --soft:#181818;
+      --text:#f7f4ef;
+      --muted:#b8b2aa;
+      --line:rgba(255,255,255,.10);
+      --gold:#c7a66a;
+      --shadow:0 24px 70px rgba(0,0,0,.34);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(199,166,106,.10), transparent 32rem),
+        var(--bg);
+      color:var(--text);
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{
+      width:min(100%, 560px);
+      margin:0 auto;
+      padding:18px 16px 44px;
+    }
+    .card{
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:30px;
+      background:linear-gradient(180deg, rgba(20,20,20,.97), rgba(11,11,11,.99));
+      box-shadow:var(--shadow);
+    }
+    .hero{
+      position:relative;
+      height:500px;
+      background:#111;
+      overflow:hidden;
+    }
+    .hero img.photo{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center 38%;
+      display:block;
+      filter:saturate(.92) contrast(1.02);
+    }
+    .hero:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.04) 25%, rgba(0,0,0,.22) 62%, rgba(0,0,0,.92) 100%);
+      pointer-events:none;
+    }
+    .brand{
+      position:absolute;
+      left:22px; right:22px; bottom:21px;
+      z-index:2;
+      display:flex;
+      align-items:flex-end;
+      gap:16px;
+    }
+    .brand-logo{
+      width:112px;
+      max-height:74px;
+      object-fit:contain;
+      object-position:left bottom;
+      opacity:.98;
+      filter:drop-shadow(0 4px 16px rgba(0,0,0,.35));
+    }
+    .brand-copy{margin-left:auto;text-align:right}
+    h1{
+      margin:0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight:500;
+      letter-spacing:.01em;
+      font-size:clamp(34px, 8vw, 46px);
+      line-height:.95;
+    }
+    .role{
+      margin-top:9px;
+      color:#f0e7d8;
+      font-size:15px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .content{padding:26px 22px 24px}
+    .intro{
+      margin:0 auto 22px;
+      max-width:450px;
+      text-align:center;
+      color:var(--muted);
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:18px;
+      line-height:1.55;
+    }
+    .eyebrow{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      margin-bottom:14px;
+      color:var(--gold);
+      font-size:11px;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+    }
+    .eyebrow:before,.eyebrow:after{
+      content:"";
+      height:1px;width:38px;background:rgba(199,166,106,.42)
+    }
+    .primary{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:58px;
+      border-radius:16px;
+      background:var(--text);
+      color:#0a0a0a;
+      font-weight:750;
+      letter-spacing:.01em;
+      transition:transform .15s ease, opacity .15s ease;
+    }
+    .primary:active,.action:active{transform:scale(.985)}
+    .actions{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:10px;
+      margin-top:12px;
+    }
+    .action{
+      min-height:64px;
+      padding:12px 14px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:var(--soft);
+      display:flex;
+      align-items:center;
+      gap:11px;
+      transition:transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .action:hover{border-color:rgba(199,166,106,.45); background:#1b1a18}
+    .icon{
+      width:36px;height:36px;border-radius:50%;
+      display:grid;place-items:center;
+      border:1px solid rgba(199,166,106,.25);
+      color:var(--gold);
+      flex:0 0 auto;
+    }
+    .icon svg{width:18px;height:18px}
+    .action strong{display:block;font-size:14px}
+    .action span{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+    .statement{
+      margin:26px 0 6px;
+      padding:22px 18px;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      text-align:center;
+    }
+    .statement p{
+      margin:0;
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:21px;
+      line-height:1.45;
+      color:#eee7dc;
+    }
+    .footer{
+      text-align:center;
+      margin-top:22px;
+      color:#77736d;
+      font-size:11px;
+      letter-spacing:.08em;
+    }
+    @media (max-width:420px){
+      .wrap{padding:0}
+      .card{border-radius:0;border-left:0;border-right:0}
+      .hero{height:60vh; min-height:460px; max-height:620px}
+      .brand{align-items:flex-end; gap:8px}
+      .brand-logo{width:96px}
+      .content{padding:24px 18px 26px}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card" aria-label="Tarjeta profesional de Sara Pizarro">
+      <div class="hero">
+        <img class="photo" src="sara-pizarro.jpg" alt="Sara Pizarro, fotógrafa de eventos">
+        <div class="brand">
+          <img class="brand-logo" src="logo-sara-pizarro.png" alt="Logo Sara Pizarro">
+          <div class="brand-copy">
+            <h1>Sara<br>Pizarro</h1>
+            <div class="role">Fotógrafa de eventos</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="eyebrow">Fotografía profesional</div>
+        <p class="intro">
+          Experiencia, sensibilidad y una mirada cuidada para capturar la esencia de cada evento.
+        </p>
+
+        <a class="primary" href="sara-pizarro.vcf" download="Sara-Pizarro.vcf">
+          Guardar contacto
+        </a>
+
+        <div class="actions">
+          <a class="action" href="tel:+34640994943" aria-label="Llamar a Sara Pizarro">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <div><strong>Llamar</strong><span>640 994 943</span></div>
+          </a>
+
+          <a class="action" href="https://wa.me/34640994943" target="_blank" rel="noopener">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8A8.5 8.5 0 0 1 12.5 20a8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 8.7 3.9 8.38 8.38 0 0 1 12.5 3h.5A8.48 8.48 0 0 1 21 11v.5z"/>
+              </svg>
+            </div>
+            <div><strong>WhatsApp</strong><span>Escríbeme</span></div>
+          </a>
+
+          <a class="action" href="https://www.instagram.com/saraapizarro/" target="_blank" rel="noopener">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3" y="3" width="18" height="18" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+            <div><strong>Instagram</strong><span>@saraapizarro</span></div>
+          </a>
+
+          <a class="action" href="https://www.linkedin.com/in/sarapizarrosolano/" target="_blank" rel="noopener">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3" y="9" width="4" height="12"/>
+                <path d="M5 3.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+                <path d="M11 21V9h4v2c1-1.6 2.4-2.4 4-2.4 2.6 0 4 1.7 4 5V21h-4v-6.3c0-1.7-.6-2.7-2-2.7-1.4 0-2 1.1-2 3.1V21z"/>
+              </svg>
+            </div>
+            <div><strong>LinkedIn</strong><span>Perfil profesional</span></div>
+          </a>
+        </div>
+
+        <div class="statement">
+          <p>“Cada evento tiene una historia. Mi trabajo es convertirla en imágenes que permanezcan.”</p>
+        </div>
+
+        <div class="footer">SARA PIZARRO · FOTOGRAFÍA DE EVENTOS</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
